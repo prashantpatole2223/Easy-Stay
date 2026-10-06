@@ -42,12 +42,13 @@ roomRouter.get(
 
 roomRouter.get(
     "/:roomId/details",
-    authMiddleware,
     getRoomDetails
 );
 
 roomRouter.get(
     "/:roomId",
+    authMiddleware,
+    authorizeRoles("owner"),
     getRoom
 );
 
