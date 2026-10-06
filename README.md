@@ -2,12 +2,12 @@
 
 A full-stack hotel booking platform inspired by MakeMyTrip, built with the MERN stack. Customers search and book hotels; owners list and manage properties. The core of the project is a **concurrency-safe booking engine** that prevents double-booking.
 
-**Live demo:** <ADD LINK>
-**Demo logins:** Customer: `<email> / <password>` | Owner: `<email> / <password>`
+**Live demo:** <[ADD LINK](https://easy-stay-dun.vercel.app)>
+**Demo logins:** Customer: `<demo.customer@easystay.com> / <123456>` | Owner: `<demo.owner@easystay.com> / <123456>`
 
 ![Home](./screenshots/home.png)
 ![Booking flow](./screenshots/booking.png)
-![Owner dashboard](./screenshots/owner.png)
+![Owner My Hotels](./screenshots/MyHotels.png)
 
 ---
 
@@ -94,7 +94,11 @@ Each booking stores a snapshot of guest info (captured at checkout) and of every
 Reviews are the only source of truth. Average rating and review count are computed with an aggregation when needed, so they cannot drift out of sync. A unique index on `bookingId` enforces one review per stay. A booking is eligible when `status === "confirmed"` and `checkOut <= now`.
 
 ### 8. Cancellation
-Runs in a transaction: the booking moves to `cancelled` and the linked payment's refund fields are updated. Availability frees up automatically because `cancelled` bookings are excluded from the overlap query.
+Cancellation is handled through a transaction.
+
+The booking moves from `confirmed` to `cancelled`, and the linked payment is updated to record the refund state.
+
+Because cancelled bookings are excluded from the availability query, the cancelled rooms automatically become available for future bookings.
 
 ### 9. Search state in the URL
 City, dates, guests, filters, sort and page live in the URL query string. This gives shareable links, a working back button, and persistence on refresh.
@@ -201,4 +205,4 @@ These were scoped out deliberately for a portfolio project (effort vs. value), a
 
 ## Author
 
-<Your Name> · [LinkedIn](#) · [GitHub](#)
+**Prashant Patole** · [LinkedIn](https://www.linkedin.com/in/prashant-patole-b6469b334/) · [GitHub](https://github.com/prashantpatole2223/)
