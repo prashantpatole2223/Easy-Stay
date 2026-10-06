@@ -2,8 +2,10 @@
 
 A full-stack hotel booking platform inspired by MakeMyTrip, built with the MERN stack. Customers search and book hotels; owners list and manage properties. The core of the project is a **concurrency-safe booking engine** that prevents double-booking.
 
-**Live demo:** <[ADD LINK](https://easy-stay-dun.vercel.app)>
-**Demo logins:** Customer: `<demo.customer@easystay.com> / <123456>` | Owner: `<demo.owner@easystay.com> / <123456>`
+**Live demo:** [EasyStay](https://easy-stay-dun.vercel.app/)
+
+**Demo logins:** Customer: `demo.customer@easystay.com / 123456` | Owner: `demo.owner@easystay.com / 123456`
+
 
 ![Home](./screenshots/home.png)
 ![Booking flow](./screenshots/booking.png)
