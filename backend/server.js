@@ -11,13 +11,16 @@ const startServer = async () => {
   try {
     await connectDB();
 
+
     startBookingExpiryJob();
 
     app.listen(PORT, () => {
       console.log(`EasyStay server running on port ${PORT}`);
     });
 
+
   } catch (error) {
+    console.error("Server startup error:", error);
     process.exit(1);
   }
 };
