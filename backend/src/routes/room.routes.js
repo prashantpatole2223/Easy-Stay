@@ -48,8 +48,6 @@ roomRouter.get(
 
 roomRouter.get(
     "/:roomId",
-    authMiddleware,
-    authorizeRoles("owner"),
     getRoom
 );
 
