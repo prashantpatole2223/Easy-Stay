@@ -36,9 +36,14 @@ import Profile from "./pages/Profile";
 
 import PageNotFound from "./pages/PageNotFound";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 const App = () => {
     return (
         <div className="min-h-screen bg-white">
+
+            <ScrollToTop/>
+
             <Navbar />
 
             <Routes>
